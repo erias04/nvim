@@ -1,8 +1,8 @@
-
-local local_plugins = {
+return {
     {
-        "harpoon",
-        dir = "~/personal/harpoon",
+        "theprimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local harpoon = require("harpoon")
 
@@ -21,22 +21,4 @@ local local_plugins = {
             vim.keymap.set("n", "<leader><C-s>", function() harpoon:list():replace_at(4) end)
         end
     },
-    {
-        "vim-apm", dir = "~/personal/vim-apm",
-        config = function()
-            --[[
-            local apm = require("vim-apm")
-
-            apm:setup({})
-            vim.keymap.set("n", "<leader>apm", function() apm:toggle_monitor() end)
-            --]]
-        end
-    },
-    {
-        "vim-with-me", dir = "~/personal/vim-with-me",
-        config = function() end
-    },
 }
-
-return local_plugins
-

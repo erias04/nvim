@@ -1,6 +1,6 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-require("theprimeagen.lazy_init")
+require("erias.set")
+require("erias.remap")
+require("erias.lazy_init")
 
 -- DO.not
 -- DO NOT INCLUDE THIS
@@ -14,7 +14,7 @@ require("theprimeagen.lazy_init")
 -- DO.not
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local ThePrimeagenGroup = augroup('erias', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -66,3 +66,6 @@ autocmd('LspAttach', {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- Rust formatter automatically on save
+vim.g.rustfmt_autosave = 1
